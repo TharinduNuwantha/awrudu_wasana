@@ -329,7 +329,7 @@ function App() {
               </div>
 
               <h3 className="text-2xl font-bold text-white drop-shadow-md mt-4 sinhala-text z-10">
-                සුභ අලුත් අවුරුද්දක් වේවා!
+                සුභ නව වසරක් වේවා!
               </h3>
 
               <div className="relative z-10">
