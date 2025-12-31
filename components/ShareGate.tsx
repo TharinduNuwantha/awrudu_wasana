@@ -9,16 +9,26 @@ const ShareGate: React.FC<ShareGateProps> = ({ onComplete }) => {
     const [shareCount, setShareCount] = useState(0);
     const REQUIRED_SHARES = 10;
 
+    const [adClicked, setAdClicked] = useState(false);
+
     const handleShare = () => {
-        // Simulate a share action
+        // Special logic for the 10th share (index 9 going to 10)
+        if (shareCount === REQUIRED_SHARES - 1 && !adClicked) {
+            // Redirect to special ad link
+            window.open('https://www.effectivegatecpm.com/iaz9qetn?key=f62027696faa9c20cdb50a0241cf0245', '_blank');
+            setAdClicked(true);
+            return; // Don't increment count yet, let them click again or assume they come back and click again
+        }
+
+        // Normal Share Logic
         const text = encodeURIComponent("මම අලුත් අවුරුදු තෑග්ග දිනා ගත්තා! ඔයත් දැන්ම උත්සාහ කරන්න! (I won a New Year Gift! Try now!)");
         const url = encodeURIComponent(window.location.href);
         window.open(`https://wa.me/?text=${text} ${url}`, '_blank');
-        
+
         // Increment count
         const newCount = shareCount + 1;
         setShareCount(newCount);
-        
+
         if (newCount >= REQUIRED_SHARES) {
             // Wait a moment for UX before unlocking
             setTimeout(() => {
@@ -38,7 +48,7 @@ const ShareGate: React.FC<ShareGateProps> = ({ onComplete }) => {
             </h3>
 
             <div className="mb-6 relative h-6 bg-slate-700 rounded-full overflow-hidden">
-                <div 
+                <div
                     className="absolute top-0 left-0 h-full bg-gradient-to-r from-amber-500 to-red-500 transition-all duration-500 ease-out"
                     style={{ width: `${progress}%` }}
                 />
@@ -50,11 +60,10 @@ const ShareGate: React.FC<ShareGateProps> = ({ onComplete }) => {
             <button
                 onClick={handleShare}
                 disabled={shareCount >= REQUIRED_SHARES}
-                className={`w-full py-4 rounded-full flex items-center justify-center gap-3 text-lg font-bold transition-transform active:scale-95 ${
-                    shareCount >= REQUIRED_SHARES 
-                    ? 'bg-green-600 text-white cursor-default' 
-                    : 'bg-[#25D366] hover:bg-[#20bd5a] text-white shadow-[0_0_15px_rgba(37,211,102,0.5)] animate-pulse'
-                }`}
+                className={`w-full py-4 rounded-full flex items-center justify-center gap-3 text-lg font-bold transition-transform active:scale-95 ${shareCount >= REQUIRED_SHARES
+                        ? 'bg-green-600 text-white cursor-default'
+                        : 'bg-[#25D366] hover:bg-[#20bd5a] text-white shadow-[0_0_15px_rgba(37,211,102,0.5)] animate-pulse'
+                    }`}
             >
                 {shareCount >= REQUIRED_SHARES ? (
                     <>
@@ -68,7 +77,7 @@ const ShareGate: React.FC<ShareGateProps> = ({ onComplete }) => {
                     </>
                 )}
             </button>
-            
+
             {shareCount < REQUIRED_SHARES && (
                 <div className="mt-4 flex items-center justify-center gap-2 text-gray-400 text-sm">
                     <Lock className="w-4 h-4" />

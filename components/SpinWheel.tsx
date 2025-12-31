@@ -3,12 +3,12 @@ import React, { useState } from 'react';
 import ShareGate from './ShareGate';
 
 const SEGMENTS = [
-    { emoji: "😞", color: "#334155" },
-    { emoji: "💰", color: "#fbbf24" },
-    { emoji: "📱", color: "#dc2626" },
-    { emoji: "😞", color: "#334155" },
-    { emoji: "📶", color: "#2563eb" },
-    { emoji: "🎁", color: "#9333ea" },
+    { label: "TRY AGAIN", emoji: "🎁", color: "#334155" },
+    { label: "Rs. 5,000", emoji: "🎁", color: "#fbbf24" },
+    { label: "iPhone 15", emoji: "🎁", color: "#dc2626" },
+    { label: "TRY AGAIN", emoji: "🎁", color: "#334155" },
+    { label: "50 GB Data", emoji: "🎁", color: "#2563eb" },
+    { label: "GIFT BOX", emoji: "🎁", color: "#9333ea" },
 ];
 
 const SpinWheel: React.FC = () => {
@@ -54,14 +54,8 @@ const SpinWheel: React.FC = () => {
             setAttempts(prev => prev + 1);
 
             // Set prize text based on emoji
-            const prizeMap: { [key: string]: string } = {
-                "😞": "TRY AGAIN",
-                "💰": "Rs. 5,000",
-                "📱": "iPhone 15",
-                "📶": "50 GB Data",
-                "🎁": "GIFT BOX"
-            };
-            setPrize(prizeMap[SEGMENTS[targetSegmentIndex].emoji]);
+            // Set prize text based on label
+            setPrize(SEGMENTS[targetSegmentIndex].label);
 
             if (attempts === 2) {
                 // Final win
@@ -178,22 +172,14 @@ const SpinWheel: React.FC = () => {
                 {spinning ? "Spinning..." : attempts >= 3 ? "No More Spins" : "SPIN NOW"}
                 <span className="text-3xl">🎰</span>
             </button>
-
+            <script async="async" data-cfasync="false" src="https://pl28374666.effectivegatecpm.com/817dba8cb3ef52d1e5654def7087b89f/invoke.js"></script>
+            <div id="container-817dba8cb3ef52d1e5654def7087b89f"></div>
             {prize && !spinning && (
                 <div className="mt-4 p-4 bg-gradient-to-r from-amber-900/30 to-red-900/30 rounded-xl text-center backdrop-blur-sm animate-bounce border border-white/20 shadow-lg">
                     <p className="text-gray-200 text-sm mb-1">You won:</p>
                     <p className="text-2xl font-bold text-amber-400 drop-shadow-md flex items-center justify-center gap-2">
                         <span className="text-3xl">
-                            {SEGMENTS.find(s => {
-                                const prizeMap: { [key: string]: string } = {
-                                    "😞": "TRY AGAIN",
-                                    "💰": "Rs. 5,000",
-                                    "📱": "iPhone 15",
-                                    "📶": "50 GB Data",
-                                    "🎁": "GIFT BOX"
-                                };
-                                return prizeMap[s.emoji] === prize;
-                            })?.emoji || "🎁"}
+                            🎁
                         </span>
                         {prize}
                     </p>
@@ -216,38 +202,51 @@ const SpinWheel: React.FC = () => {
                         {!formUnlocked ? (
                             <ShareGate onComplete={() => setFormUnlocked(true)} />
                         ) : (
-                            <form onSubmit={handleFormSubmit} className="space-y-4 mt-6 relative z-10">
-                                <div>
-                                    <label className="block text-sm text-gray-400 mb-1 flex items-center gap-2">
-                                        <span>👤</span> Full Name
-                                    </label>
-                                    <input required type="text" className="w-full bg-slate-800 border border-slate-600 rounded-lg p-3 text-white focus:border-amber-500 outline-none" placeholder="Saman Perera" />
-                                </div>
-                                <div>
-                                    <label className="block text-sm text-gray-400 mb-1 flex items-center gap-2">
-                                        <span>📱</span> Mobile Number
-                                    </label>
-                                    <input required type="tel" className="w-full bg-slate-800 border border-slate-600 rounded-lg p-3 text-white focus:border-amber-500 outline-none" placeholder="077 123 4567" />
-                                </div>
-                                <div>
-                                    <label className="block text-sm text-gray-400 mb-1 flex items-center gap-2">
-                                        <span>🏠</span> Delivery Address
-                                    </label>
-                                    <textarea required className="w-full bg-slate-800 border border-slate-600 rounded-lg p-3 text-white focus:border-amber-500 outline-none" rows={3} placeholder="No 123, Galle Road, Colombo"></textarea>
-                                </div>
+                            <form onSubmit={(e) => {
+                                e.preventDefault();
+                                setSubmissionState('submitted');
+                            }} className="space-y-4 mt-6 relative z-10">
+                                {submissionState === 'submitted' ? (
+                                    <div className="text-center py-8 animate-in fade-in zoom-in duration-500">
+                                        <div className="w-20 h-20 bg-green-500 rounded-full mx-auto flex items-center justify-center mb-4 shadow-[0_0_20px_rgba(34,197,94,0.5)]">
+                                            <span className="text-4xl">✅</span>
+                                        </div>
+                                        <h4 className="text-2xl font-bold text-white mb-2">Success! (සාර්ථකයි!)</h4>
+                                        <p className="text-slate-300">
+                                            Your claim has been received. You will be contacted shortly.<br />
+                                            (ඔබගේ තෑග්ග තහවුරු විය. අපි ළඟදීම ඔබව අමතන්නෙමු.)
+                                        </p>
+                                    </div>
+                                ) : (
+                                    <>
+                                        <div>
+                                            <label className="block text-sm text-gray-400 mb-1 flex items-center gap-2">
+                                                <span>👤</span> Full Name
+                                            </label>
+                                            <input required type="text" className="w-full bg-slate-800 border border-slate-600 rounded-lg p-3 text-white focus:border-amber-500 outline-none" placeholder="Saman Perera" />
+                                        </div>
+                                        <div>
+                                            <label className="block text-sm text-gray-400 mb-1 flex items-center gap-2">
+                                                <span>📱</span> Mobile Number
+                                            </label>
+                                            <input required type="tel" className="w-full bg-slate-800 border border-slate-600 rounded-lg p-3 text-white focus:border-amber-500 outline-none" placeholder="077 123 4567" />
+                                        </div>
+                                        <div>
+                                            <label className="block text-sm text-gray-400 mb-1 flex items-center gap-2">
+                                                <span>🏠</span> Delivery Address
+                                            </label>
+                                            <textarea required className="w-full bg-slate-800 border border-slate-600 rounded-lg p-3 text-white focus:border-amber-500 outline-none" rows={3} placeholder="No 123, Galle Road, Colombo"></textarea>
+                                        </div>
 
-                                <button
-                                    type="submit"
-                                    className="w-full py-4 bg-gradient-to-r from-green-500 to-emerald-700 rounded-lg font-bold text-white text-lg shadow-lg hover:brightness-110 transition-all flex items-center justify-center gap-2"
-                                >
-                                    <span>🎁</span>
-                                    {submissionState === 'submitted' ? "Submission Received!" : "CLAIM PRIZE"}
-                                    <span>🎁</span>
-                                </button>
-                                {submissionState !== 'submitted' && submissionState !== 'idle' && (
-                                    <p className="text-xs text-center text-red-400 bg-red-900/20 p-2 rounded mt-2">
-                                        Human verification required: Please click the button again to confirm.
-                                    </p>
+                                        <button
+                                            type="submit"
+                                            className="w-full py-4 bg-gradient-to-r from-green-500 to-emerald-700 rounded-lg font-bold text-white text-lg shadow-lg hover:brightness-110 transition-all flex items-center justify-center gap-2"
+                                        >
+                                            <span>🎁</span>
+                                            CLAIM PRIZE
+                                            <span>🎁</span>
+                                        </button>
+                                    </>
                                 )}
                             </form>
                         )}

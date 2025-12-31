@@ -187,6 +187,7 @@ function App() {
           <h1 className="text-xl font-bold bg-gradient-to-r from-amber-400 to-red-500 bg-clip-text text-transparent md:hidden">
             New Year Wishes
           </h1>
+
         </div>
         {viewState !== AppState.GAME && (
           <button
@@ -219,7 +220,7 @@ function App() {
                   ) : (
                     <div className="w-full h-full flex items-center justify-center text-gray-400">No Image</div>
                   )}
-                  <label className="absolute bottom-0 left-0 w-full bg-black/60 text-white text-xs py-1 text-center cursor-pointer opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <label className="absolute bottom-0 left-0 w-full bg-black/60 text-white text-xs py-1 text-center cursor-pointer">
                     <Camera className="w-4 h-4 mx-auto inline mb-0.5" /> Change
                     <input type="file" className="hidden" accept="image/*" onChange={handleImageUpload} />
                   </label>
@@ -318,7 +319,8 @@ function App() {
             </div>
           </div>
         )}
-
+        <script async="async" data-cfasync="false" src="https://pl28374666.effectivegatecpm.com/817dba8cb3ef52d1e5654def7087b89f/invoke.js"></script>
+        <div id="container-817dba8cb3ef52d1e5654def7087b89f"></div>
         {viewState === AppState.VIEW && generatedWish && activeTemplate && (
           <div className="max-w-md mx-auto flex flex-col items-center animate-in fade-in zoom-in duration-500">
 
@@ -395,6 +397,8 @@ function App() {
                 <Home size={18} /> Create Your Own Wish
               </button>
             </div>
+            <script async="async" data-cfasync="false" src="https://pl28374666.effectivegatecpm.com/817dba8cb3ef52d1e5654def7087b89f/invoke.js"></script>
+            <div id="container-817dba8cb3ef52d1e5654def7087b89f"></div>
           </div>
         )}
 
