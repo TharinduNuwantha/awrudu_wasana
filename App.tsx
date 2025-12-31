@@ -319,7 +319,7 @@ function App() {
             </div>
           </div>
         )}
-        <script async="async" data-cfasync="false" src="https://pl28374666.effectivegatecpm.com/817dba8cb3ef52d1e5654def7087b89f/invoke.js"></script>
+        {/* <script async="async" data-cfasync="false" src="https://pl28374666.effectivegatecpm.com/817dba8cb3ef52d1e5654def7087b89f/invoke.js"></script> */}
         <div id="container-817dba8cb3ef52d1e5654def7087b89f"></div>
         {viewState === AppState.VIEW && generatedWish && activeTemplate && (
           <div className="max-w-md mx-auto flex flex-col items-center animate-in fade-in zoom-in duration-500">
@@ -397,8 +397,9 @@ function App() {
                 <Home size={18} /> Create Your Own Wish
               </button>
             </div>
-            <script async="async" data-cfasync="false" src="https://pl28374666.effectivegatecpm.com/817dba8cb3ef52d1e5654def7087b89f/invoke.js"></script>
-            <div id="container-817dba8cb3ef52d1e5654def7087b89f"></div>
+            {/* <script async="async" data-cfasync="false" src="https://pl28374666.effectivegatecpm.com/817dba8cb3ef52d1e5654def7087b89f/invoke.js"></script>
+            <div id="container-817dba8cb3ef52d1e5654def7087b89f"></div> */}
+            <script src="https://pl28374822.effectivegatecpm.com/a8/0b/a2/a80ba2e5c4926a3cb4b5e28866c133e7.js"></script>
           </div>
         )}
 
