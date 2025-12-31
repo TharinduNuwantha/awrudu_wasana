@@ -135,7 +135,7 @@ function App() {
 
   const shareOnWhatsApp = () => {
     const link = getShareLink();
-    const text = `Hey! ${generatedWish?.senderName} sent you a New Year Wish! Open here: ${link}`;
+    const text = `${generatedWish?.message}\n\nඔබට විශේෂ පණිවිඩයක්! 🎁\n\nබලන්න: ${link}`;
     window.open(`https://wa.me/?text=${encodeURIComponent(text)}`, '_blank');
   };
 
