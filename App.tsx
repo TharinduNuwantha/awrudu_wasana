@@ -372,12 +372,12 @@ function App() {
                 >
                   <LinkIcon size={18} /> Copy Link
                 </button>
-                <button
+                {/* <button
                   onClick={() => alert("Image download started...")}
                   className="w-full bg-slate-700 hover:bg-slate-600 text-white font-bold py-3 rounded-xl flex items-center justify-center gap-2 shadow-lg transition"
                 >
                   <Download size={18} /> Download
-                </button>
+                </button> */}
               </div>
 
               <button
