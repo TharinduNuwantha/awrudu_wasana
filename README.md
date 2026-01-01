@@ -52,7 +52,7 @@ A modern, professional, and viral New Year wishing platform built with **React**
 ### Installation / ස්ථාපනය
 1. **Clone repository:**
    ```bash
-   git clone https://github.com/your-username/suba-aluth-avurudde.git
+   git clone https://github.com/TharinduNuwantha/suba-aluth-avurudde.git
    ```
 2. **Install dependencies:**
    ```bash
